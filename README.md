@@ -1,5 +1,5 @@
 # Postman Tests
-A Collection of tests I've written in Postman for various API projects/validations
+A Collection of tests I've written in Postman based off of various API projects/validations
 
 # Overview #
 I'm a QA Analyst from a non-technical background who wants to help other QA testers and Analysts learn to validate APIs/begin transitioning their testing from manual to more automated. I've got over a decade of manual testing experience and have spent the past few years exploring the best way(s) to teach myself code & test automation. Throughout this time I've experienced multiple periods of frustration with how little information there was available about automated testing & API testing written to/from a wholly QA perspective, vs. from those with engineering backgrounds/already fully versed in code. If the latter is you this project might be like learning the alphabet. But if you're about to give up attempting API testing because you can't figure out the difference between a string, number, endpoint, variable, or why when you try something it says "undefined"—you're in the right place.
