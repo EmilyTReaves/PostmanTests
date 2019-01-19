@@ -1,0 +1,202 @@
+{
+	"info": {
+		"_postman_id": "4dbddc49-22b3-4e5b-9cb3-66d3b87dff45",
+		"name": "PostmanTrainingCollectionTests",
+		"description": "A Collection of tests of various types of calls/requests using the Library of Congresses public API, which does not require an API key or OAauth.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "LibraryofCongress_200 Status",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "72de2cea-d8f2-4f86-bd69-8a73c1c8d7d7",
+						"exec": [
+							"tests [\"200 Response Status Returning Test\"] === pm.test(\"Response Status 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"National Endowment for the Humanities\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://chroniclingamerica.loc.gov/",
+					"protocol": "http",
+					"host": [
+						"chroniclingamerica",
+						"loc",
+						"gov"
+					],
+					"path": [
+						""
+					]
+				},
+				"description": "A Test to Verify that requests made to the Open Source Library of Congress, Chronicling America: Historic American Newspapers site API are coming back without error and returning an \"Okay\" 200 Status"
+			},
+			"response": []
+		},
+		{
+			"name": "LOC_Search_Michigan",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a68c5dc2-a49d-4130-ae2f-a7c8daa148f8",
+						"exec": [
+							"tests [\"200 Response Status Returning Test\"] === pm.test(\"Response Status 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"tests[\"Response includes Michigan\"] === pm.test(\"Library of Congress Test: Michigan Search Results PASS\", function() {",
+							"     pm.expect(pm.response.text()).to.include(\"Michigan\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://chroniclingamerica.loc.gov/search/titles/results/?terms=michigan ",
+					"protocol": "http",
+					"host": [
+						"chroniclingamerica",
+						"loc",
+						"gov"
+					],
+					"path": [
+						"search",
+						"titles",
+						"results",
+						""
+					],
+					"query": [
+						{
+							"key": "terms",
+							"value": "michigan "
+						}
+					]
+				},
+				"description": "A Get request for titles that match the search term \"Michigan\""
+			},
+			"response": []
+		},
+		{
+			"name": "LOC_Content Response Validation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a68c5dc2-a49d-4130-ae2f-a7c8daa148f8",
+						"exec": [
+							"tests [\"200 Response Status Returning Test\"] === pm.test(\"Response Status 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Content-Type present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://chroniclingamerica.loc.gov/newspapers.json",
+					"protocol": "http",
+					"host": [
+						"chroniclingamerica",
+						"loc",
+						"gov"
+					],
+					"path": [
+						"newspapers.json"
+					]
+				},
+				"description": "A Test that validates portions of the content in the Response Body"
+			},
+			"response": []
+		},
+		{
+			"name": "LOC_json Response Test",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a68c5dc2-a49d-4130-ae2f-a7c8daa148f8",
+						"exec": [
+							"tests [\"200 Response Status Returning Test\"] === pm.test(\"Response Status 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Content-Type present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"",
+							"pm.test(\"LOC response Body contains Json\", function () {",
+							"    pm.response.to.have.jsonBody(\"place_of_publication\");",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://chroniclingamerica.loc.gov/lccn/sn86069873.json",
+					"protocol": "http",
+					"host": [
+						"chroniclingamerica",
+						"loc",
+						"gov"
+					],
+					"path": [
+						"lccn",
+						"sn86069873.json"
+					]
+				},
+				"description": "A Test that validates that the response body that's returning is:\n\n1) in the (digitial)ly availably and accessible json format, and\n2) that within the Response Body being returned is information related to to the place of publication"
+			},
+			"response": []
+		}
+	]
+}
