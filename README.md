@@ -30,5 +30,15 @@ In this step, we'll Send a New test/request (from inside the collection we impor
 * Verify that after "Loading" finishes you see two things: 1) a large amount of data (default is html) returned in the "Body" at the bottom of your window, and 2) the "Status" 200 OK
 * Click on the Tests tab
 * You should see a green Pass button and "Response Status 200" in the same portion of your window as the Response data from above
-* If you like, you can scroll to the far right, to the SNIPPETS section and select/insert a portion of code. Edit it to fit the API test, (ex: Response body: Contains string, and alter the code to include "National Endowment for the Humanities") Place/write this SNIPPET/new test directly underneath the Status 200 test.
+* If you like, you can scroll to the far right, to the SNIPPETS section and select/insert a portion of code. Edit it to fit the API test, (ex: Response body: Contains string, and alter the code to include "National Endowment for the Humanities") Place/write this SNIPPET/new test directly underneath the Status 200 test. 
 * Click on Send again to see if your tests pass or fail.
+
+## Step 3 ##
+### Summary ###
+Now that you should be comfortable Sending a request and parsing out the Response Status (200 is what you want to see) and Pass or Fail in the Test tab, you can select another Request from the collection to run - OR - add your own.
+
+## Instructions ##
+* On the left side of the window, underneath the PostmanTrainingCollectionTests Collection, select a new Request (ex: LOC_Content Response Validation). Click to open.
+* Click on the Tests tab
+* Hit the Send button
+* Verify your Tests Pass
