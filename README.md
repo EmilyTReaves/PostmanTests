@@ -25,6 +25,7 @@ In this step, we'll use the import function to add a collection of existing requ
 ### Summary ###
 In this step, we'll Send a New test/request (from inside the collection we imported in Step 1 above) to validate that the open source LibraryOfCongress/chronam API is returning a 200 status (OK) response
 
+## Instructions ##
 * Click on the first request from the collection "LibraryofCongress_200 Status"
 * Click the Send button
 * Verify that after "Loading" finishes you see two things: 1) a large amount of data (default is html) returned in the "Body" at the bottom of your window, and 2) the "Status" 200 OK
